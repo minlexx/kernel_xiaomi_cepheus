@@ -614,7 +614,8 @@ static int __init skip_initramfs_param(char *str)
 {
 	if (*str)
 		return 0;
-	do_skip_initramfs = 1;
+	/* do_skip_initramfs = 1; NOPE */
+	printk(KERN_WARNING "We were told to skip initramfs, but won't do so!\n");
 	return 1;
 }
 __setup("want_initramfs", skip_initramfs_param);
