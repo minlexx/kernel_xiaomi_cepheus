@@ -6090,6 +6090,7 @@ static void soc_work_fn(struct work_struct *work)
 	if (rc < 0)
 		pr_err("failed to get cycle count, rc=%d\n", rc);
 
+#if 0
 	pr_info("adjust_soc: s %d r %d i %d v %d t %d cc %d m 0x%02x\n",
 			soc,
 			esr_uohms,
@@ -6098,6 +6099,7 @@ static void soc_work_fn(struct work_struct *work)
 			temp,
 			cycle_count,
 			msoc);
+#endif
 
 	if (temp < 450 && fg->last_batt_temp >= 450) {
 		/* follow the way that fg_notifier_cb use wake lock */
